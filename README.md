@@ -2,6 +2,8 @@
 
 Building Topology Ontology for Smart Homes (BOTSH) is an interoperable ontology developed based on BOT and customized specifically to the domain of smart homes. There are around 8 classes and 15 properties. It is completely aligned with Smart Home and Building Ontology (BOSH) which is a domain ontology for smart homes consisting of sensors, actuators, appliances, observations and measurements.
 
+#### The ontology is available at http://purl.org/botsh
+#### The ontology documentation is available at http://purl.org/botsh/documentation
 
 ## BOTSH - Demo
 
