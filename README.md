@@ -4,6 +4,7 @@ Building Topology Ontology for Smart Homes (BOTSH) is an interoperable ontology 
 
 #### The ontology is available at http://purl.org/botsh
 #### The ontology documentation is available at http://purl.org/botsh/documentation
+#### BOTSH and BOSH alignment is available as a seperate turtle file at http://purl.org/botsh/bosh-alignment
 
 ## BOTSH - Demo
 
