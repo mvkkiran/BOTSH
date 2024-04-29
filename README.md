@@ -12,9 +12,14 @@ To evaluate the BOTSH and to demonstrate the advantages of aligning BOTSH with B
 
 Application demo available at http://botsh.pythonanywhere.com/
 
-
+## Paper - BOTSH: Towards aligning semantic web of things with building ontologies 
+https://content.iospress.com/articles/journal-of-intelligent-and-fuzzy-systems/ifs219425
 
 This is an outcome of the PhD. research work done by Vamsee Muppavarapu under the supervision of Dr. Gowtham Ramesh.
+
+Please use the below MLA style citation to refer the work:
+
+Muppavarapu, Vamsee and Ramesh, Gowtham. ‘BOTSH: Towards Aligning Semantic Web of Things with Building Ontologies’. 1 Jan. 2024 : 1 – 12.
 
 ### Authors
 Vamsee Muppavarapu - https://scholar.google.com/citations?user=5w4Ry4MAAAAJ&hl
