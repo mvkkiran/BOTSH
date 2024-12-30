@@ -1,0 +1,54 @@
+@prefix : <http://purl.org/botsh/bosh-alignment#> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix bot: <https://w3id.org/bot#> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dce: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix botsh: <http://purl.org/botsh#> .
+@prefix bosh: <http://purl.org/bosh#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix onem2m: <https://git.onem2m.org/MAS/BaseOntology/raw/master/base_ontology.owl#> .
+@prefix schema: <https://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <http://purl.org/botsh/bosh-alignment> .
+
+<http://purl.org/botsh/bosh-alignment> rdf:type owl:Ontology ;
+                         owl:imports <http://purl.org/botsh>, <http://purl.org/bosh>, <https://w3id.org/bot> ;
+                         dcterms:creator "Vamsee Krishna Kiran Muppavarapu"@en ;
+                         dcterms:modified "2022-06-29" ;
+                         rdfs:comment "Building Topology Ontology for Smart Homes and Buildings. BOTSH ontology is aligned with BOSH which is a smart home domain ontology that describes concepts related to sensors, actuators, appliances, observations and measurements."@en ;
+                         owl:versionInfo "v.1.0" ;
+                         dcterms:creator "Ramesh Gowtham"@en ;
+                         dcterms:created "2022-06-29" ;
+                         dcterms:title "BOTSH alignment with BOSH"@en ;
+                         dcterms:description "Ontology extending the concepts related to Building Topology Ontology and its alignments with smart home and building ontology."@en .
+
+## BOSH Alignments
+
+#################################################################
+#    Classes
+#################################################################
+bosh:Appliance rdfs:subClassOf botsh:Thing .
+bosh:Control rdfs:subClassOf botsh:Thing .
+bosh:Device rdfs:subClassOf botsh:Thing .
+bosh:SecuritySystem rdfs:subClassOf botsh:Thing .
+bosh:Building owl:equivalentClass botsh:Building .
+bosh:BuildingEnvironment rdfs:subClassOf botsh:Zone .
+bosh:Surface rdfs:subClassOf botsh:BuildingElement .
+bosh:Flat rdfs:subClassOf botsh:Space .
+bosh:Room rdfs:subClassOf botsh:Space .
+bosh:Balcony rdfs:subClassOf botsh:Space .
+
+#################################################################
+#    Object Properties
+#################################################################
+bosh:contains owl:equivalentProperty botsh:containsThing .
+bosh:belongsTo rdfs:subPropertyOf [ owl:inverseOf botsh:hasSubElement ] .
+bosh:hasActuator rdfs:subPropertyOf botsh:hasThing .
+bosh:hasSensor rdfs:subPropertyOf botsh:hasThing .
