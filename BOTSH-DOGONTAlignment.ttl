@@ -1,0 +1,83 @@
+@prefix : <http://purl.org/botsh/BOTSH-DOGONTAlignment#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .  
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix schema: <https://schema.org/> .
+@prefix botsh: <http://purl.org/botsh#> .
+@prefix dogont: <http://elite.polito.it/ontologies/dogont.owl#> .
+@base <http://purl.org/botsh/BOTSH-DOGONTAlignment> .
+
+<http://purl.org/botsh/BOTSH-DOGONTAlignment>  rdf:type owl:Ontology , voaf:Vocabulary ;
+	dcterms:title "DogOnt to BOTSH alignment."@en ;
+	dcterms:description """This ontology defines proposed alignments with the DogOnt ontology."""@en ;
+	dcterms:issued "2017-09-12"^^xsd:date ;
+	dcterms:modified "2019-03-02"^^xsd:date ;
+    dcterms:creator "Ramesh Gowtham"@en ,
+                                        "Vamsee Krishna Kiran Muppavarapu"@en ;
+	dcterms:license <http://creativecommons.org/licenses/by/3.0/> ;
+    owl:versionInfo "v1.0.0" ;
+	owl:imports 	<http://purl.org/botsh> ,
+					<http://elite.polito.it/ontologies/dogont.owl> .
+
+dcterms:title a owl:AnnotationProperty .
+dcterms:description a owl:AnnotationProperty .
+dcterms:issued a owl:AnnotationProperty .
+dcterms:modified a owl:AnnotationProperty .
+dcterms:creator a owl:AnnotationProperty .
+dcterms:contributor a owl:AnnotationProperty .
+dcterms:license a owl:AnnotationProperty .
+vann:preferredNamespacePrefix a owl:AnnotationProperty .
+vann:preferredNamespaceUri a owl:AnnotationProperty .
+vcard:fn a owl:AnnotationProperty .
+schema:name a owl:AnnotationProperty .
+
+	
+#################################################################
+#    Object properties
+#################################################################
+
+dogont:contains rdfs:subPropertyOf botsh:containsElement .
+dogont:belongsTo rdfs:subPropertyOf [ owl:inverseOf botsh:hasSubElement ] .
+dogont:floorOf rdfs:subPropertyOf botsh:interfaceOf .
+dogont:ceilingOf rdfs:subPropertyOf botsh:interfaceOf .
+dogont:hasWall rdfs:subPropertyOf botsh:adjacentElement .
+dogont:hasWallOpening rdfs:subPropertyOf botsh:hasSubElement .
+
+#################################################################
+#    Classes
+#################################################################
+
+dogont:Building  owl:equivalentClass botsh:Building .
+
+## new addition
+dogont:Flat rdfs:subClassOf botsh:Building .
+dogont:BuildingThing owl:equivalentClass botsh:BuildingElement .
+
+dogont:Storey  owl:equivalentClass botsh:BuildingStorey .
+dogont:Room rdfs:subClassOf botsh:Space .
+
+## new addition
+dogont:Garage rdfs:subClassOf botsh:Space .
+dogont:Garden rdfs:subClassOf botsh:Space .
+
+botsh:Zone rdfs:subClassOf dogont:Environment .
+dogont:BuildingEnvironment rdfs:subClassOf botsh:Zone .
+dogont:Room rdfs:subClassOf botsh:Space .
+dogont:Balcony	rdfs:subClassOf botsh:Zone .
+dogont:Terrace	rdfs:subClassOf botsh:Zone .
+
+dogont:Controllable 	rdfs:subClassOf botsh:Thing .
+dogont:Device 			rdfs:subClassOf botsh:Thing .
+dogont:TechnicalSystem	rdfs:subClassOf botsh:BuildingElement .
+
+dogont:Vertical	    rdfs:subClassOf botsh:BuildingElement .
+dogont:Furniture    rdfs:subClassOf botsh:BuildingElement .
+
+dogont:Ceiling	rdfs:subClassOf botsh:BuildingInterface .
+dogont:Floor	rdfs:subClassOf botsh:BuildingInterface .
+

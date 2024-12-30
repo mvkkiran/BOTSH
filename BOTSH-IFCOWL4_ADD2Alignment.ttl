@@ -1,0 +1,48 @@
+@prefix : <http://purl.org/botsh/BOTSH-IFCOWL4_ADD2Alignment#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .  
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix schema: <https://schema.org/> .
+@prefix botsh: <http://purl.org/botsh#> .
+@prefix ifc: <http://www.buildingsmart-tech.org/ifcOWL/IFC4_ADD2#> .
+@base <http://purl.org/botsh/BOTSH-IFCOWL4_ADD2Alignment> .
+
+<http://purl.org/botsh/BOTSH-IFCOWL4_ADD2Alignment> rdf:type owl:Ontology , voaf:Vocabulary ;
+	dcterms:title "ifcOWL4_Add2 to BOT alignment."@en ;
+	dcterms:description """This ontology defines proposed alignments with the ifcOWL4_Add2 ontology."""@en ;
+  dcterms:creator "Ramesh Gowtham"@en ,
+                                        "Vamsee Krishna Kiran Muppavarapu"@en ;
+	dcterms:license <http://creativecommons.org/licenses/by/3.0/> ;
+    owl:versionInfo "v1.0.0" ;
+	owl:imports 	<https://purl.org/botsh> ,
+					<http://www.buildingsmart-tech.org/ifcOWL/IFC4_ADD2> .
+
+dcterms:title a owl:AnnotationProperty .
+dcterms:description a owl:AnnotationProperty .
+dcterms:issued a owl:AnnotationProperty .
+dcterms:modified a owl:AnnotationProperty .
+dcterms:creator a owl:AnnotationProperty .
+dcterms:contributor a owl:AnnotationProperty .
+dcterms:license a owl:AnnotationProperty .
+vann:preferredNamespacePrefix a owl:AnnotationProperty .
+vann:preferredNamespaceUri a owl:AnnotationProperty .
+vcard:fn a owl:AnnotationProperty .
+schema:name a owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+ifc:IfcSite owl:equivalentClass botsh:Site .
+ifc:IfcBuilding  owl:equivalentClass botsh:Building .
+ifc:IfcBuildingStorey  owl:equivalentClass botsh:BuildingStorey .
+ifc:IfcSpace  owl:equivalentClass botsh:Space .
+ifc:IfcElement  owl:equivalentClass botsh:BuildingElement .
+
+ifc:IfcSpatialStructureElement rdfs:subClassOf botsh:Zone .
+ifc:IfcSpatialZone rdfs:subClassOf botsh:Zone .
